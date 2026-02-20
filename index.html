@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Event Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🎉 Smart Event Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <div class="top-row">
+            
+            <section class="card form-section">
+                <h2>Add New Event</h2>
+                <form id="eventForm">
+                    <div class="form-group">
+                        <label for="eventTitle">Event Title:</label>
+                        <input type="text" id="eventTitle" placeholder="e.g. Tech Conference" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDate">Event Date:</label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventCategory">Category:</label>
+                        <select id="eventCategory" required>
+                            <option value="Conference">Conference</option>
+                            <option value="Workshop">Workshop</option>
+                            <option value="Meetup">Meetup</option>
+                            <option value="Party">Party</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDesc">Description:</label>
+                        <textarea id="eventDesc" rows="3" placeholder="Brief description..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Event</button>
+                </form>
+            </section>
+
+            <section class="card list-section">
+                <h2>My Events</h2>
+                <div class="controls">
+                    <button id="clearEventsBtn" class="btn btn-danger">Clear All Events</button>
+                    <button id="addSampleBtn" class="btn btn-secondary">Add Sample Events</button>
+                </div>
+                
+                <div id="eventsContainer" class="events-container">
+                    <p class="empty-msg">No events yet. Add your first event!</p>
+                </div>
+            </section>
+        </div>
+
+        <section class="card demo-section">
+            <h2>DOM Manipulation & Event Demo</h2>
+            
+            <h3>1. Text Content Comparison</h3>
+            <div class="demo-grid">
+                <div class="demo-box source-box">
+                    <h4>Original Source</h4>
+                    <div id="sourceElement" style="border: 1px dashed #ccc; padding: 5px; background: #eee;">
+                        Hello    <span style="color: red; display: none;">HIDDEN TEXT</span> <b>World</b>!
+                    </div>
+                </div>
+
+                <div class="demo-box">
+                    <h4>innerHTML</h4>
+                    <div id="demoInnerHTML" class="output-box"></div>
+                </div>
+
+                <div class="demo-box">
+                    <h4>innerText</h4>
+                    <div id="demoInnerText" class="output-box"></div>
+                </div>
+
+                <div class="demo-box">
+                    <h4>textContent</h4>
+                    <div id="demoTextContent" class="output-box"></div>
+                </div>
+            </div>
+
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+            <h3>2. Keyboard Event Tracker</h3>
+            <p style="margin-bottom: 10px; color: #636e72;">Press any key on your keyboard to test event handling.</p>
+            
+            <div class="key-container">
+                <div class="key-display-box">
+                    <small>Last Key:</small>
+                    <div id="lastKeyDisplay" class="large-key">-</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
